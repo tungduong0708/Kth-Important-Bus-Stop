@@ -103,7 +103,7 @@ class Graph:
                 print(source_id, target_id)
                 if source_id == target_id or target_id not in target_node:
                     continue
-                current_node = target_id
+                current_node = target_node[target_id]
                 count[current_node] += 1
                 while current_node != source_id:
                     print(current_node)
