@@ -104,11 +104,11 @@ class Graph:
                 if source_id == target_id or target_id not in target_node:
                     continue
                 current_node = target_node[target_id]
-                count[current_node] += 1
+                count[current_node[0]] += 1
                 while current_node != source_id:
                     print(current_node)
                     current_node = predecessors[current_node]
-                    count[current_node] += 1
+                    count[current_node[0]] += 1
         
         sorted_count = dict(sorted(count.items(), key=lambda item: item[1], reverse=True))
         top_stops = list(sorted_count.keys())[:k]
